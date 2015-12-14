@@ -103,6 +103,8 @@ view.addSubview(ll)
 #Note
 - LinearLayout and RelativeLayout extends UIView, but not LinearLayoutView/RelativeLayoutView(they are just container, should rework on naming)
 - UIView that have .hidden = true, will be ignored (it won't be built so frame might be wrong)
+- AutoBuild is enabled by default. The layout will build when you attached it to a view. You can rebuild the layout(e.g after you call sizeToFit for UILabel) by calling .build()
+- If you need the layout to build without attaching to any parent and there is no MATCH_PARENT used, enable forceBuild() and then call .build(). Use this if you know what you are doing.
 
 #Known limitation
 - The added UIView will not have padding feature (this was in previous version but now removed, abuse margin instead)
